@@ -1,6 +1,3 @@
-# Re-run the markdown generation code since the kernel was reset and file was lost
-
-markdown_content = """
 # 📊 SQL Summary Report – Northwind Database
 
 This document summarizes various SQL queries and techniques used to analyze the [Northwind database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs), a classic dataset for learning relational databases.
@@ -18,8 +15,8 @@ To practice SQL joins, aggregations, and grouping functions for generating busin
 ### 🔗 Joins
 - **INNER JOIN** between tables like `Orders` and `Customers`, `Products` and `Suppliers`, `Orders` and `Employees`.
 - **LEFT JOIN** to find customers with no orders.
-- **RIGHT JOIN** to include all employees whether they handled orders or not.
-- **CROSS JOIN** as an example of full cartesian join (all combinations).
+- **RIGHT JOIN** to include all employees, whether they handled orders or not.
+- **CROSS JOIN** as an example of a full cartesian join (all combinations).
 
 ### 📊 Aggregations & Grouping
 - **COUNT, SUM** for calculating:
