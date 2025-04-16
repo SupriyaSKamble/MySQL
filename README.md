@@ -1,4 +1,4 @@
-# 📊 SQL Summary Report – Northwind Database
+# 📊 SQL Summary Report 
 
 This document summarizes various SQL queries and techniques used to analyze the [Northwind database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs), a classic dataset for learning relational databases.
 
@@ -25,18 +25,15 @@ To practice SQL joins, aggregations, and grouping functions for generating busin
   - Total sales per product
   - Sales trends over time
   - Top 5 products by revenue
+    
+
 
 ---
 
 ## 🧮 Key SQL Examples
 
-### ✅ List Customer Names with Their Orders
-```sql
-SELECT Customers.CustomerName, Orders.OrderID
-FROM Customers
-LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
-
-## 🧠 Analytical Summary of SQL Practical Task (`world_db`)
+---
+## 🧩 Analytical Summary of SQL Practical Task (`world_db`)
 
 ---
 
@@ -45,8 +42,6 @@ LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 - **Insight**: Helps gauge urban density and spread.
 - **Value**: Useful for national planning and logistics.
 
-✅ 1. Count Cities in the USA
-Query:
 SELECT COUNT(ID) AS TotalCities 
 FROM city 
 JOIN country ON city.CountryCode = country.Code 
