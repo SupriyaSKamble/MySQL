@@ -35,3 +35,134 @@ To practice SQL joins, aggregations, and grouping functions for generating busin
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
+## 🧠 Analytical Summary of SQL Practical Task (`world_db`)
+
+---
+
+## 1. Count of Cities in the USA
+- **Purpose**: Establish a baseline number of cities for demographic analysis in the US.
+- **Insight**: Helps gauge urban density and spread.
+- **Value**: Useful for national planning and logistics.
+
+✅ 1. Count Cities in the USA
+Query:
+SELECT COUNT(ID) AS TotalCities 
+FROM city 
+JOIN country ON city.CountryCode = country.Code 
+WHERE country.Code = 'USA';
+
+## 2. Country with the Highest Life Expectancy
+- **Purpose**: Identify countries with top health indicators.
+- **Insight**: Highlights successful healthcare and quality of life.
+- **Value**: Crucial for global health policy comparison.
+
+SELECT Name, LifeExpectancy 
+FROM country 
+WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
+
+## 3. Cities with 'New' in the Name
+- **Purpose**: Curate destinations for New Year promotions.
+- **Insight**: Lists modern and historically renamed cities.
+- **Value**: Supports marketing and tourism content creation.
+
+SELECT Name 
+FROM city 
+WHERE Name LIKE '%New%';
+
+## 4. Top 10 Most Populous Cities
+- **Purpose**: Highlight major urban centers globally.
+- **Insight**: Reflects global population hubs.
+- **Value**: Used in urban studies, investment, and development.
+
+SELECT * 
+FROM city 
+ORDER BY Population DESC 
+LIMIT 10;
+
+
+## 5. Cities with Population > 2 Million
+- **Purpose**: Identify target cities for real estate or services.
+- **Insight**: Spotlights economically significant cities.
+- **Value**: Assists with investment targeting and scalability planning.
+
+SELECT * 
+FROM city 
+WHERE Population > 2000000;
+
+## 6. Cities Beginning with 'Be'
+- **Purpose**: Help bloggers identify unique cities.
+- **Insight**: Fun way to explore patterns in city naming.
+- **Value**: Enhances storytelling and thematic travel content.
+
+SELECT * 
+FROM city 
+WHERE Name LIKE 'Be%';
+
+## 7. Cities with Population 500k–1M
+- **Purpose**: Identify mid-sized cities for infrastructure planning.
+- **Insight**: Focuses on growing but manageable urban areas.
+- **Value**: Supports regional planning and development prioritization.
+
+## 8. Cities Sorted Alphabetically
+- **Purpose**: Provide a reference for geography education.
+- **Insight**: Simplifies city lookup and navigation.
+- **Value**: Aids teaching and presentation preparation.
+
+## 9. Most Populated City
+- **Purpose**: Locate the densest city by population.
+- **Insight**: Reveals top-tier urban agglomeration.
+- **Value**: Essential for mega-city policy, infrastructure, and analysis.
+
+## 10. City Name Frequency
+- **Purpose**: Count recurring city names globally.
+- **Insight**: Identifies naming trends and duplicates.
+- **Value**: Useful in data cleansing and cultural studies.
+
+## 11. City with Lowest Population
+- **Purpose**: Find the least populated urban entity.
+- **Insight**: Represents anomalies or special jurisdictions.
+- **Value**: Important for niche research and case studies.
+
+## 12. Country with Largest Population
+- **Purpose**: Determine the most populous country.
+- **Insight**: Aligns with economic and geopolitical power.
+- **Value**: Used in strategic analysis and resource allocation.
+
+## 13. Capital of Spain
+- **Purpose**: Retrieve key political/geographical data.
+- **Insight**: Validates database integrity and relations.
+- **Value**: Assists in itinerary planning and education.
+
+## 14. Cities in Europe
+- **Purpose**: Build a list of European urban locations.
+- **Insight**: Supports cross-border collaboration and studies.
+- **Value**: Ideal for programs like Erasmus or cultural exchange.
+
+## 15. Average Population by Country
+- **Purpose**: Evaluate urban distribution at national level.
+- **Insight**: Countries with high averages may have few, large cities.
+- **Value**: Useful for national urban planning and investment focus.
+
+## 16. Capital Cities Population Comparison
+- **Purpose**: Compare capitals’ population sizes.
+- **Insight**: Some capitals are symbolic vs. economic centers.
+- **Value**: Informs governance and decentralization discussions.
+
+## 17. Countries with Lowest Population
+- **Purpose**: Find sparsely populated countries.
+- **Insight**: Highlights microstates or remote regions.
+- **Value**: Useful for development aid, tourism, or ecological study.
+
+## 18. Cities with High GDP per Capita
+- **Purpose**: Identify wealthy cities for economic planning.
+- **Insight**: Points to potential for investment and luxury markets.
+- **Value**: Informs business expansion and global market entry.
+
+## 19. Cities Ranked 31–40 by Population
+- **Purpose**: Extend population analysis beyond the top 30.
+- **Insight**: Reveals emerging hubs and secondary cities.
+- **Value**: Enhances depth of urban demographic research.
+
+---
+
