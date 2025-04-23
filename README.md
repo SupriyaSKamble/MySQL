@@ -102,6 +102,8 @@ SELECT COUNT(ID) AS TotalCities
 FROM city 
 JOIN country ON city.CountryCode = country.Code                    
 WHERE country.Code = 'USA';
+
+
 ![image](https://github.com/user-attachments/assets/1c948415-f2bc-418d-8ed2-91abaf003413)
 
 
@@ -126,6 +128,8 @@ SELECT Name
 FROM city 
 WHERE Name LIKE '%New%';
 
+[View the data](./3.csv)
+
 ## 4. Top 10 Most Populous Cities
 - **Purpose**: Highlight major urban centers globally.
 - **Insight**: Reflects global population hubs.
@@ -136,6 +140,7 @@ FROM city
 ORDER BY Population DESC 
 LIMIT 10;
 
+[View the data](./4.csv)
 
 ## 5. Cities with Population > 2 Million
 - **Purpose**: Identify target cities for real estate or services.
@@ -146,6 +151,8 @@ SELECT *
 FROM city 
 WHERE Population > 2000000;
 
+[View the data](./5.csv)
+
 ## 6. Cities Beginning with 'Be'
 - **Purpose**: Help bloggers identify unique cities.
 - **Insight**: Fun way to explore patterns in city naming.
@@ -155,6 +162,8 @@ SELECT *
 FROM city 
 WHERE Name LIKE 'Be%';
 
+[View the data](./6.csv)
+
 ## 7. Cities with Population 500k–1M
 - **Purpose**: Identify mid-sized cities for infrastructure planning.
 - **Insight**: Focuses on growing but manageable urban areas.
@@ -163,6 +172,8 @@ WHERE Name LIKE 'Be%';
 SELECT * 
 FROM city 
 WHERE Population BETWEEN 500000 AND 1000000;
+
+[View the data](./7.csv)
 
 ## 8. Cities Sorted Alphabetically
 - **Purpose**: Provide a reference for geography education.
