@@ -75,7 +75,17 @@ ORDER BY Month;
 ---
 
 Project 2
+🌍 World Database Overview
 
+The World Database is another MySQL sample dataset that contains information about:
+
+🌍 Countries
+
+🏙️ Cities
+
+🗣️ Languages
+
+It’s ideal for practicing joins, subqueries, aggregation, filtering, and geographical data analysis.
 ---
 ## 🧩 World-db
 
