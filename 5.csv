@@ -1,0 +1,93 @@
+ID,Name,CountryCode,District,Population
+35,Alger,DZA,Alger,2168000
+56,Luanda,AGO,Luanda,2022000
+69,"Buenos Aires",ARG,"Distrito Federal",2982146
+130,Sydney,AUS,"New South Wales",3276207
+131,Melbourne,AUS,Victoria,2865329
+150,Dhaka,BGD,Dhaka,3612850
+206,"São Paulo",BRA,"São Paulo",9968485
+207,"Rio de Janeiro",BRA,"Rio de Janeiro",5598953
+208,Salvador,BRA,Bahia,2302832
+209,"Belo Horizonte",BRA,"Minas Gerais",2139125
+210,Fortaleza,BRA,Ceará,2097757
+456,London,GBR,England,7285000
+554,"Santiago de Chile",CHL,Santiago,4703954
+593,Guayaquil,ECU,Guayas,2070040
+608,Cairo,EGY,Kairo,6789479
+609,Alexandria,EGY,Aleksandria,3328196
+610,Giza,EGY,Giza,2221868
+653,Madrid,ESP,Madrid,2879052
+712,"Cape Town",ZAF,"Western Cape",2352121
+756,"Addis Abeba",ETH,"Addis Abeba",2495000
+765,Quezon,PHL,"National Capital Reg",2173831
+939,Jakarta,IDN,"Jakarta Raya",9604900
+940,Surabaya,IDN,"East Java",2663820
+941,Bandung,IDN,"West Java",2429000
+1024,"Mumbai (Bombay)",IND,Maharashtra,10500000
+1025,Delhi,IND,Delhi,7206704
+1026,"Calcutta [Kolkata]",IND,"West Bengali",4399819
+1027,"Chennai (Madras)",IND,"Tamil Nadu",3841396
+1028,Hyderabad,IND,"Andhra Pradesh",2964638
+1029,Ahmedabad,IND,Gujarat,2876710
+1030,Bangalore,IND,Karnataka,2660088
+1365,Baghdad,IRQ,Baghdad,4336000
+1380,Teheran,IRN,Teheran,6758845
+1464,Roma,ITA,Latium,2643581
+1532,Tokyo,JPN,Tokyo-to,7980230
+1533,"Jokohama [Yokohama]",JPN,Kanagawa,3339594
+1534,Osaka,JPN,Osaka,2595674
+1535,Nagoya,JPN,Aichi,2154376
+1881,Nairobi,KEN,Nairobi,2290000
+1890,Shanghai,CHN,Shanghai,9696300
+1891,Peking,CHN,Peking,7472000
+1892,Chongqing,CHN,Chongqing,6351600
+1893,Tianjin,CHN,Tianjin,5286800
+1894,Wuhan,CHN,Hubei,4344600
+1895,Harbin,CHN,Heilongjiang,4289800
+1896,Shenyang,CHN,Liaoning,4265200
+1897,"Kanton [Guangzhou]",CHN,Guangdong,4256300
+1898,Chengdu,CHN,Sichuan,3361500
+1899,"Nanking [Nanjing]",CHN,Jiangsu,2870300
+1900,Changchun,CHN,Jilin,2812000
+1901,Xi´an,CHN,Shaanxi,2761400
+1902,Dalian,CHN,Liaoning,2697000
+1903,Qingdao,CHN,Shandong,2596000
+1904,Jinan,CHN,Shandong,2278100
+1905,Hangzhou,CHN,Zhejiang,2190500
+1906,Zhengzhou,CHN,Henan,2107200
+1907,Shijiazhuang,CHN,Hebei,2041500
+2257,"Santafé de Bogotá",COL,"Santafé de Bogotá",6260862
+2258,Cali,COL,Valle,2077386
+2298,Kinshasa,COD,Kinshasa,5064000
+2318,Pyongyang,PRK,Pyongyang-si,2484000
+2331,Seoul,KOR,Seoul,9981619
+2332,Pusan,KOR,Pusan,3804522
+2333,Inchon,KOR,Inchon,2559424
+2334,Taegu,KOR,Taegu,2548568
+2413,"La Habana",CUB,"La Habana",2256000
+2485,Casablanca,MAR,Casablanca,2940623
+2515,"Ciudad de México",MEX,"Distrito Federal",8591309
+2710,"Rangoon (Yangon)",MMR,"Rangoon [Yangon]",3361700
+2812,Abidjan,CIV,Abidjan,2500000
+2822,Karachi,PAK,Sindh,9269265
+2823,Lahore,PAK,Punjab,5063499
+2890,Lima,PER,Lima,6464693
+2974,Paris,FRA,Île-de-France,2125246
+3018,Bucuresti,ROM,Bukarest,2016131
+3068,Berlin,DEU,Berliini,3386667
+3173,Riyadh,SAU,Riyadh,3324000
+3174,Jedda,SAU,Mekka,2046300
+3208,Singapore,SGP,–,4017733
+3263,Taipei,TWN,Taipei,2641312
+3320,Bangkok,THA,Bangkok,6320174
+3357,Istanbul,TUR,Istanbul,8787958
+3358,Ankara,TUR,Ankara,3038159
+3359,Izmir,TUR,Izmir,2130359
+3426,Kyiv,UKR,Kiova,2624000
+3503,Toskent,UZB,"Toskent Shahri",2117500
+3580,Moscow,RUS,"Moscow (City)",8389200
+3581,"St Petersburg",RUS,Pietari,4694000
+3769,"Ho Chi Minh City",VNM,"Ho Chi Minh City",3980000
+3793,"New York",USA,"New York",8008278
+3794,"Los Angeles",USA,California,3694820
+3795,Chicago,USA,Illinois,2896016
