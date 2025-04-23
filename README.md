@@ -114,7 +114,8 @@ SELECT Name, LifeExpectancy
 FROM country 
 WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
 
-Picture
+[View the data](./2.csv)
+
 
 ## 3. Cities with 'New' in the Name
 - **Purpose**: Curate destinations for New Year promotions.
