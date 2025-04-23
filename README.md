@@ -74,7 +74,7 @@ ORDER BY Month;
 
 ---
 
-## 🧮 Key SQL Examples
+Project 2
 
 ---
 ## 🧩 World-db
