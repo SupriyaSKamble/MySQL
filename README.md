@@ -115,8 +115,8 @@ WHERE country.Code = 'USA';
 SELECT Name, LifeExpectancy 
 FROM country 
 WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
+![image](https://github.com/user-attachments/assets/341c7c61-5bd1-4f9c-b6d2-b91b83f6b56a)
 
-[View the data](./2.csv)
 
 
 ## 3. Cities with 'New' in the Name
@@ -127,8 +127,9 @@ WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
 SELECT Name 
 FROM city 
 WHERE Name LIKE '%New%';
+![image](https://github.com/user-attachments/assets/49b2d3cc-94a7-4421-a26c-ce5c6f632f03)
 
-[View the data](./3.csv)
+
 
 ## 4. Top 10 Most Populous Cities
 - **Purpose**: Highlight major urban centers globally.
@@ -140,7 +141,7 @@ FROM city
 ORDER BY Population DESC 
 LIMIT 10;
 
-[View the data](./4.csv)
+
 
 ## 5. Cities with Population > 2 Million
 - **Purpose**: Identify target cities for real estate or services.
@@ -151,7 +152,7 @@ SELECT *
 FROM city 
 WHERE Population > 2000000;
 
-[View the data](./5.csv)
+
 
 ## 6. Cities Beginning with 'Be'
 - **Purpose**: Help bloggers identify unique cities.
@@ -162,7 +163,7 @@ SELECT *
 FROM city 
 WHERE Name LIKE 'Be%';
 
-[View the data](./6.csv)
+
 
 ## 7. Cities with Population 500k–1M
 - **Purpose**: Identify mid-sized cities for infrastructure planning.
@@ -173,7 +174,6 @@ SELECT *
 FROM city 
 WHERE Population BETWEEN 500000 AND 1000000;
 
-[View the data](./7.csv)
 
 ## 8. Cities Sorted Alphabetically
 - **Purpose**: Provide a reference for geography education.
