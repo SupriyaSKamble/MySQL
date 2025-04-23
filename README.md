@@ -25,6 +25,7 @@ Its normalized schema makes it perfect for learning how to model, query, and ana
 ---
 
 
+
 ---
 
 ## 💡 What Can You Build with This?
@@ -101,6 +102,8 @@ SELECT COUNT(ID) AS TotalCities
 FROM city 
 JOIN country ON city.CountryCode = country.Code                    
 WHERE country.Code = 'USA';
+![image](https://github.com/user-attachments/assets/1c948415-f2bc-418d-8ed2-91abaf003413)
+
 
 ## 2. Country with the Highest Life Expectancy
 - **Purpose**: Identify countries with top health indicators.
@@ -110,6 +113,8 @@ WHERE country.Code = 'USA';
 SELECT Name, LifeExpectancy 
 FROM country 
 WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
+
+Picture
 
 ## 3. Cities with 'New' in the Name
 - **Purpose**: Curate destinations for New Year promotions.
