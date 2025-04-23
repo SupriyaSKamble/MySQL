@@ -1,13 +1,8 @@
-# 📊 SQL Summary Report 
 
-This document summarizes various SQL queries and techniques used to analyze the [Northwind database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs), a classic dataset for learning relational databases.
-
----
 # 📊 Northwind Database Project
 
 Welcome to the **Northwind Database Project!** This repository contains the SQL script required to recreate the legendary **Northwind database** — a classic dataset widely used for learning relational database design, SQL querying, and business data analysis.
 
-Whether you're a **student**, **developer**, or **data analyst** looking to sharpen your SQL skills, the Northwind database offers a realistic and practical environment to practice with real-world business data.
 
 ---
 
@@ -29,12 +24,6 @@ Its normalized schema makes it perfect for learning how to model, query, and ana
 
 ---
 
-## 📂 What's in This Repository?
-
-- **`Northwind Database create ak.sql`** — A complete SQL script that:
-  - Creates all tables
-  - Sets up relationships
-  - Populates the database with sample data
 
 ---
 
@@ -50,30 +39,45 @@ This project provides a powerful foundation for:
 
 ---
 
-## ⚙️ How to Set It Up
 
-1. Install a SQL environment (e.g., MySQL, DBeaver, MySQL Workbench).
-2. Open your SQL client.
-3. Run the SQL script:
-   ```sql
-   SOURCE Northwind\ Database\ create\ ak.sql;
+🧪 Example Queries with Visual Output
 
-### 📊 Aggregations & Grouping
-- **COUNT, SUM** for calculating:
-  - Number of customers per country
-  - Number of orders per shipper
-  - Total sales per product
-  - Sales trends over time
-  - Top 5 products by revenue
-    
+1. Top 5 Customers by Total Orders
 
+SELECT c.ContactName, COUNT(o.OrderID) AS TotalOrders
+FROM Customers c
+JOIN Orders o ON c.CustomerID = o.CustomerID
+GROUP BY c.ContactName
+ORDER BY TotalOrders DESC
+LIMIT 5;
+
+
+
+2. Total Sales per Product Category
+
+SELECT ct.CategoryName, SUM(od.Quantity * od.UnitPrice) AS TotalSales
+FROM OrderDetails od
+JOIN Products p ON od.ProductID = p.ProductID
+JOIN Categories ct ON p.CategoryID = ct.CategoryID
+GROUP BY ct.CategoryName
+ORDER BY TotalSales DESC;
+
+
+
+3. Monthly Sales Trends
+
+SELECT MONTH(o.OrderDate) AS Month, SUM(od.Quantity * od.UnitPrice) AS MonthlySales
+FROM Orders o
+JOIN OrderDetails od ON o.OrderID = od.OrderID
+GROUP BY MONTH(o.OrderDate)
+ORDER BY Month;
 
 ---
 
 ## 🧮 Key SQL Examples
 
 ---
-## 🧩 Analytical Summary of SQL Practical Task (`world_db`)
+## 🧩 World-db
 
 ---
 
@@ -81,10 +85,11 @@ This project provides a powerful foundation for:
 - **Purpose**: Establish a baseline number of cities for demographic analysis in the US.
 - **Insight**: Helps gauge urban density and spread.
 - **Value**: Useful for national planning and logistics.
+  
 
 SELECT COUNT(ID) AS TotalCities 
 FROM city 
-JOIN country ON city.CountryCode = country.Code 
+JOIN country ON city.CountryCode = country.Code                    
 WHERE country.Code = 'USA';
 
 ## 2. Country with the Highest Life Expectancy
