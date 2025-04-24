@@ -356,7 +356,7 @@ WHERE RN BETWEEN 31 AND 40;
 ![world db](https://github.com/user-attachments/assets/e1144071-7cc3-464b-8640-4ef2a7f3038f)
 ## 🧠 Key Insights
 - Cities like Mumbai and Shanghai rank among the most populated.
-- Countries such as Japan exhibit high life expectancies, signaling strong healthcare systems.
+- Countries such as Arrora exhibit high life expectancies, signaling strong healthcare systems.
 - Mid-size cities between 500,000 and 1 million population are ripe for infrastructure development.
 - Cities in Europe and those with culturally significant names (like starting with 'Be') support thematic studies.
 
