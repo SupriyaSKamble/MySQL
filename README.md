@@ -25,9 +25,9 @@ The Northwind database includes multiple interlinked tables that mimic the opera
 Each table contains detailed information that supports comprehensive business analysis.
 
 ## 🛠 Tools and Technologies
-- **Database**: MySQL / PostgreSQL / SQLite
-- **SQL Editor**: DBeaver, pgAdmin, or MySQL Workbench
-- **Data Visualization**: Power BI, Tableau (optional)
+- **Database**: MySQL
+- **SQL Editor**:  MySQL Workbench
+- **Data Visualization**: Power BI, Tableau
 - **Languages**: SQL
 
 ## 🔄 Project Workflow
@@ -87,7 +87,7 @@ ORDER BY Month;
 
 
 
-# 🌟 Analytical Summary of the `world_db` SQL Database
+# 🌟  `world_db` SQL Database Project
 
 ## 🌐 Overview
 The `world_db` is a comprehensive SQL database that contains global data about countries, cities, and languages. It enables analysis of demographics, economies, urban planning, and more.
@@ -103,10 +103,11 @@ The dataset is composed of the following key tables:
 - `country`: Contains details like country names, population, GDP (GNP), life expectancy, etc.
 - `countrylanguage`: Lists languages spoken in each country and their percentage of use.
 
-## 🛠️ Tools and Technologies
-- **MySQL**: Used to host and query the relational database.
-- **SQL**: Query language to interact with the database.
-- **Data Visualization Tools** (optional): For generating charts and graphs.
+## 🛠 Tools and Technologies
+- **Database**: MySQL
+- **SQL Editor**:  MySQL Workbench
+- **Data Visualization**: Power BI, Tableau
+- **Languages**: SQL
 
 ## 🔁 Project Workflow
 1. **Database Setup**: Importing `world_db` into a SQL environment.
@@ -115,8 +116,246 @@ The dataset is composed of the following key tables:
 4. **Documentation**: Compiling findings, syntax, and results.
 5. **Presentation**: Formatting for stakeholders or educational use.
 
+   
+## 1. Count of Cities in the USA
+- **Purpose**: Establish a baseline number of cities for demographic analysis in the US.
+- **Insight**: Helps gauge urban density and spread.
+- **Value**: Useful for national planning and logistics.
+  
+
+SELECT COUNT(ID) AS TotalCities 
+FROM city 
+JOIN country ON city.CountryCode = country.Code                    
+WHERE country.Code = 'USA';
+
+
+![image](https://github.com/user-attachments/assets/1c948415-f2bc-418d-8ed2-91abaf003413)
+
+
+## 2. Country with the Highest Life Expectancy
+- **Purpose**: Identify countries with top health indicators.
+- **Insight**: Highlights successful healthcare and quality of life.
+- **Value**: Crucial for global health policy comparison.
+
+SELECT Name, LifeExpectancy 
+FROM country 
+WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
+![image](https://github.com/user-attachments/assets/341c7c61-5bd1-4f9c-b6d2-b91b83f6b56a)
+
+
+
+## 3. Cities with 'New' in the Name
+- **Purpose**: Curate destinations for New Year promotions.
+- **Insight**: Lists modern and historically renamed cities.
+- **Value**: Supports marketing and tourism content creation.
+
+SELECT Name 
+FROM city 
+WHERE Name LIKE '%New%';
+
+![image](https://github.com/user-attachments/assets/49b2d3cc-94a7-4421-a26c-ce5c6f632f03)
+
+
+
+## 4. Top 10 Most Populous Cities
+- **Purpose**: Highlight major urban centers globally.
+- **Insight**: Reflects global population hubs.
+- **Value**: Used in urban studies, investment, and development.
+
+SELECT * 
+FROM city 
+ORDER BY Population DESC 
+LIMIT 10;
+
+![image](https://github.com/user-attachments/assets/9298cf9a-8ac7-4146-a3ba-5d2752f0f6ae)
+
+
+
+## 5. Cities with Population > 2 Million
+- **Purpose**: Identify target cities for real estate or services.
+- **Insight**: Spotlights economically significant cities.
+- **Value**: Assists with investment targeting and scalability planning.
+
+SELECT * 
+FROM city 
+WHERE Population > 2000000;
+
+![image](https://github.com/user-attachments/assets/fb562cd9-4e78-4540-b8b4-10a253da3837)
+
+
+## 6. Cities Beginning with 'Be'
+- **Purpose**: Help bloggers identify unique cities.
+- **Insight**: Fun way to explore patterns in city naming.
+- **Value**: Enhances storytelling and thematic travel content.
+
+SELECT * 
+FROM city 
+WHERE Name LIKE 'Be%';
+
+![image](https://github.com/user-attachments/assets/25ff4660-fa3c-4844-8a81-330e32609bc3)
+
+
+## 7. Cities with Population 500k–1M
+- **Purpose**: Identify mid-sized cities for infrastructure planning.
+- **Insight**: Focuses on growing but manageable urban areas.
+- **Value**: Supports regional planning and development prioritization.
+
+SELECT * 
+FROM city 
+WHERE Population BETWEEN 500000 AND 1000000;
+
+![image](https://github.com/user-attachments/assets/f3e55e5b-3c59-4cd9-80d7-623bb7a44e9f)
+
+
+## 8. Cities Sorted Alphabetically
+- **Purpose**: Provide a reference for geography education.
+- **Insight**: Simplifies city lookup and navigation.
+- **Value**: Aids teaching and presentation preparation.
+
+SELECT * 
+FROM city 
+ORDER BY Name ASC;
+
+![image](https://github.com/user-attachments/assets/ec7e1eec-3b73-4199-a188-253ac29da34c)
+
+## 9. Most Populated City
+- **Purpose**: Locate the densest city by population.
+- **Insight**: Reveals top-tier urban agglomeration.
+- **Value**: Essential for mega-city policy, infrastructure, and analysis.
+
+SELECT Name, Population 
+FROM city 
+ORDER BY Population DESC 
+LIMIT 1;
+
+![image](https://github.com/user-attachments/assets/9e1f00f7-fe9c-43ec-9852-953624ce0374)
+
+
+## 10. City Name Frequency
+- **Purpose**: Count recurring city names globally.
+- **Insight**: Identifies naming trends and duplicates.
+- **Value**: Useful in data cleansing and cultural studies.
+
+SELECT Name, COUNT(*) AS NoOfOccurrence 
+FROM city 
+GROUP BY Name 
+HAVING COUNT(*) > 1 
+ORDER BY Name;
+
+![image](https://github.com/user-attachments/assets/1ec0fe20-7632-4e67-ad22-64e4e7eea9ab)
+
+## 11. City with Lowest Population
+- **Purpose**: Find the least populated urban entity.
+- **Insight**: Represents anomalies or special jurisdictions.
+- **Value**: Important for niche research and case studies.
+
+SELECT Name, Population 
+FROM city 
+ORDER BY Population ASC 
+LIMIT 1;
+
+![image](https://github.com/user-attachments/assets/6e625254-6017-4320-88ff-845bfbc55485)
+
+## 12. Country with Largest Population
+- **Purpose**: Determine the most populous country.
+- **Insight**: Aligns with economic and geopolitical power.
+- **Value**: Used in strategic analysis and resource allocation.
+
+SELECT Name, Population 
+FROM country 
+ORDER BY Population DESC 
+LIMIT 1;
+
+![image](https://github.com/user-attachments/assets/ad8cfa06-56ef-438a-a319-31cb43e5e1a7)
+
+## 13. Capital of Spain
+- **Purpose**: Retrieve key political/geographical data.
+- **Insight**: Validates database integrity and relations.
+- **Value**: Assists in itinerary planning and education.
+
+SELECT Name, Capital 
+FROM country 
+WHERE Name = 'Spain';
+![image](https://github.com/user-attachments/assets/b9096fda-7170-4479-a01b-3ae7e92927a6)
+
+## 14. Cities in Europe
+- **Purpose**: Build a list of European urban locations.
+- **Insight**: Supports cross-border collaboration and studies.
+- **Value**: Ideal for programs like Erasmus or cultural exchange.
+
+SELECT c.Name AS City, cn.Name AS Country 
+FROM city c 
+JOIN country cn ON c.CountryCode = cn.Code 
+WHERE cn.Continent = 'Europe';
+
+![image](https://github.com/user-attachments/assets/6cba9e0a-7118-4bbb-b7ac-15b2ac6c89a3)
+
+## 15. Average Population by Country
+- **Purpose**: Evaluate urban distribution at national level.
+- **Insight**: Countries with high averages may have few, large cities.
+- **Value**: Useful for national urban planning and investment focus.
+
+SELECT Name, AVG(Population) AS AveragePopulation 
+FROM country 
+GROUP BY Name;
+
+![image](https://github.com/user-attachments/assets/542d8fc9-e91d-4e19-811a-10ddd8202d1f)
+
+
+## 16. Capital Cities Population Comparison
+- **Purpose**: Compare capitals’ population sizes.
+- **Insight**: Some capitals are symbolic vs. economic centers.
+- **Value**: Informs governance and decentralization discussions.
+
+SELECT cn.Name AS Country, c.Name AS Capital, c.Population 
+FROM city c 
+JOIN country cn ON c.ID = cn.Capital 
+ORDER BY c.Population DESC;
+
+![image](https://github.com/user-attachments/assets/38307721-ebf7-477f-a603-f6f4fc07a10a)
+
+## 17. Countries with Lowest Population
+- **Purpose**: Find sparsely populated countries.
+- **Insight**: Highlights microstates or remote regions.
+- **Value**: Useful for development aid, tourism, or ecological study.
+
+SELECT Name, Population 
+FROM country 
+WHERE Population = (SELECT MIN(Population) FROM country);
+
+![image](https://github.com/user-attachments/assets/de1343de-dae3-4468-84bf-698b1901243c)
+
+## 18. Cities with High GDP per Capita
+- **Purpose**: Identify wealthy cities for economic planning.
+- **Insight**: Points to potential for investment and luxury markets.
+- **Value**: Informs business expansion and global market entry.
+
+SELECT c.Name AS City, cn.Name AS Country, cn.GNP AS HighGNP 
+FROM city c 
+JOIN country cn ON c.CountryCode = cn.Code 
+WHERE cn.GNP > (SELECT AVG(GNP) FROM country);
+
+![image](https://github.com/user-attachments/assets/3c7ff179-1800-4b67-be0a-62dfa914e25b)
+
+## 19. Cities Ranked 31–40 by Population
+- **Purpose**: Extend population analysis beyond the top 30.
+- **Insight**: Reveals emerging hubs and secondary cities.
+- **Value**: Enhances depth of urban demographic research.
+
+WITH citypop AS (
+    SELECT Name, Population, 
+           ROW_NUMBER() OVER (ORDER BY Population DESC) AS RN 
+    FROM city
+)
+SELECT Name, Population, RN 
+FROM citypop 
+WHERE RN BETWEEN 31 AND 40;
+
+![image](https://github.com/user-attachments/assets/e8bf1b0f-e474-482d-972a-31805e447a09)
+
+![world db](https://github.com/user-attachments/assets/e1144071-7cc3-464b-8640-4ef2a7f3038f)
 ## 🧠 Key Insights
-- Cities like New York and Shanghai rank among the most populated.
+- Cities like Mumbai and Shanghai rank among the most populated.
 - Countries such as Japan exhibit high life expectancies, signaling strong healthcare systems.
 - Mid-size cities between 500,000 and 1 million population are ripe for infrastructure development.
 - Cities in Europe and those with culturally significant names (like starting with 'Be') support thematic studies.
@@ -170,214 +409,9 @@ The dataset is composed of the following key tables:
 ## 🔒 Conclusion
 The `world_db` SQL database is a rich resource for extracting critical global insights across sectors. Whether for analysis, education, investment, or planning, it supports a wide range of real-world applications through structured, relational queries.
 
-![world db](https://github.com/user-attachments/assets/e1144071-7cc3-464b-8640-4ef2a7f3038f)
+
 
 ---
-
-## 1. Count of Cities in the USA
-- **Purpose**: Establish a baseline number of cities for demographic analysis in the US.
-- **Insight**: Helps gauge urban density and spread.
-- **Value**: Useful for national planning and logistics.
-  
-
-SELECT COUNT(ID) AS TotalCities 
-FROM city 
-JOIN country ON city.CountryCode = country.Code                    
-WHERE country.Code = 'USA';
-
-
-![image](https://github.com/user-attachments/assets/1c948415-f2bc-418d-8ed2-91abaf003413)
-
-
-## 2. Country with the Highest Life Expectancy
-- **Purpose**: Identify countries with top health indicators.
-- **Insight**: Highlights successful healthcare and quality of life.
-- **Value**: Crucial for global health policy comparison.
-
-SELECT Name, LifeExpectancy 
-FROM country 
-WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
-![image](https://github.com/user-attachments/assets/341c7c61-5bd1-4f9c-b6d2-b91b83f6b56a)
-
-
-
-## 3. Cities with 'New' in the Name
-- **Purpose**: Curate destinations for New Year promotions.
-- **Insight**: Lists modern and historically renamed cities.
-- **Value**: Supports marketing and tourism content creation.
-
-SELECT Name 
-FROM city 
-WHERE Name LIKE '%New%';
-![image](https://github.com/user-attachments/assets/49b2d3cc-94a7-4421-a26c-ce5c6f632f03)
-
-
-
-## 4. Top 10 Most Populous Cities
-- **Purpose**: Highlight major urban centers globally.
-- **Insight**: Reflects global population hubs.
-- **Value**: Used in urban studies, investment, and development.
-
-SELECT * 
-FROM city 
-ORDER BY Population DESC 
-LIMIT 10;
-
-
-
-## 5. Cities with Population > 2 Million
-- **Purpose**: Identify target cities for real estate or services.
-- **Insight**: Spotlights economically significant cities.
-- **Value**: Assists with investment targeting and scalability planning.
-
-SELECT * 
-FROM city 
-WHERE Population > 2000000;
-
-
-
-## 6. Cities Beginning with 'Be'
-- **Purpose**: Help bloggers identify unique cities.
-- **Insight**: Fun way to explore patterns in city naming.
-- **Value**: Enhances storytelling and thematic travel content.
-
-SELECT * 
-FROM city 
-WHERE Name LIKE 'Be%';
-
-
-
-## 7. Cities with Population 500k–1M
-- **Purpose**: Identify mid-sized cities for infrastructure planning.
-- **Insight**: Focuses on growing but manageable urban areas.
-- **Value**: Supports regional planning and development prioritization.
-
-SELECT * 
-FROM city 
-WHERE Population BETWEEN 500000 AND 1000000;
-
-
-## 8. Cities Sorted Alphabetically
-- **Purpose**: Provide a reference for geography education.
-- **Insight**: Simplifies city lookup and navigation.
-- **Value**: Aids teaching and presentation preparation.
-
-SELECT * 
-FROM city 
-ORDER BY Name ASC;
-
-## 9. Most Populated City
-- **Purpose**: Locate the densest city by population.
-- **Insight**: Reveals top-tier urban agglomeration.
-- **Value**: Essential for mega-city policy, infrastructure, and analysis.
-
-SELECT Name, Population 
-FROM city 
-ORDER BY Population DESC 
-LIMIT 1;
-
-## 10. City Name Frequency
-- **Purpose**: Count recurring city names globally.
-- **Insight**: Identifies naming trends and duplicates.
-- **Value**: Useful in data cleansing and cultural studies.
-
-SELECT Name, COUNT(*) AS NoOfOccurrence 
-FROM city 
-GROUP BY Name 
-HAVING COUNT(*) > 1 
-ORDER BY Name;
-
-## 11. City with Lowest Population
-- **Purpose**: Find the least populated urban entity.
-- **Insight**: Represents anomalies or special jurisdictions.
-- **Value**: Important for niche research and case studies.
-
-SELECT Name, Population 
-FROM city 
-ORDER BY Population ASC 
-LIMIT 1;
-
-## 12. Country with Largest Population
-- **Purpose**: Determine the most populous country.
-- **Insight**: Aligns with economic and geopolitical power.
-- **Value**: Used in strategic analysis and resource allocation.
-
-SELECT Name, Population 
-FROM country 
-ORDER BY Population DESC 
-LIMIT 1;
-
-## 13. Capital of Spain
-- **Purpose**: Retrieve key political/geographical data.
-- **Insight**: Validates database integrity and relations.
-- **Value**: Assists in itinerary planning and education.
-
-SELECT Name, Capital 
-FROM country 
-WHERE Name = 'Spain';
-
-## 14. Cities in Europe
-- **Purpose**: Build a list of European urban locations.
-- **Insight**: Supports cross-border collaboration and studies.
-- **Value**: Ideal for programs like Erasmus or cultural exchange.
-
-SELECT c.Name AS City, cn.Name AS Country 
-FROM city c 
-JOIN country cn ON c.CountryCode = cn.Code 
-WHERE cn.Continent = 'Europe';
-
-## 15. Average Population by Country
-- **Purpose**: Evaluate urban distribution at national level.
-- **Insight**: Countries with high averages may have few, large cities.
-- **Value**: Useful for national urban planning and investment focus.
-
-SELECT Name, AVG(Population) AS AveragePopulation 
-FROM country 
-GROUP BY Name;
-
-## 16. Capital Cities Population Comparison
-- **Purpose**: Compare capitals’ population sizes.
-- **Insight**: Some capitals are symbolic vs. economic centers.
-- **Value**: Informs governance and decentralization discussions.
-
-SELECT cn.Name AS Country, c.Name AS Capital, c.Population 
-FROM city c 
-JOIN country cn ON c.ID = cn.Capital 
-ORDER BY c.Population DESC;
-
-## 17. Countries with Lowest Population
-- **Purpose**: Find sparsely populated countries.
-- **Insight**: Highlights microstates or remote regions.
-- **Value**: Useful for development aid, tourism, or ecological study.
-
-SELECT Name, Population 
-FROM country 
-WHERE Population = (SELECT MIN(Population) FROM country);
-
-## 18. Cities with High GDP per Capita
-- **Purpose**: Identify wealthy cities for economic planning.
-- **Insight**: Points to potential for investment and luxury markets.
-- **Value**: Informs business expansion and global market entry.
-
-SELECT c.Name AS City, cn.Name AS Country, cn.GNP AS HighGNP 
-FROM city c 
-JOIN country cn ON c.CountryCode = cn.Code 
-WHERE cn.GNP > (SELECT AVG(GNP) FROM country);
-
-## 19. Cities Ranked 31–40 by Population
-- **Purpose**: Extend population analysis beyond the top 30.
-- **Insight**: Reveals emerging hubs and secondary cities.
-- **Value**: Enhances depth of urban demographic research.
-
-WITH citypop AS (
-    SELECT Name, Population, 
-           ROW_NUMBER() OVER (ORDER BY Population DESC) AS RN 
-    FROM city
-)
-SELECT Name, Population, RN 
-FROM citypop 
-WHERE RN BETWEEN 31 AND 40;
-
 
 ---
 
