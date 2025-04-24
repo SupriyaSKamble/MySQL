@@ -361,7 +361,7 @@ WHERE RN BETWEEN 31 AND 40;
 ## 🧠 Key Insights
 - Cities like Mumbai and Shanghai rank among the most populated.
 - Countries such as Arrora exhibit high life expectancies, signaling strong healthcare systems.
-- Mid-size cities between 500,000 and 1 million population are ripe for infrastructure development.
+- Mid-size cities between 500,000 and 1 million population are fit for infrastructure development.
 - Cities in Europe and those with culturally significant names (like starting with 'Be') support thematic studies.
 
 ## 🔍 Findings
