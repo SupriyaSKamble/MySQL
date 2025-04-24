@@ -140,7 +140,9 @@ WHERE country.Code = 'USA';
 SELECT Name, LifeExpectancy 
 FROM country 
 WHERE LifeExpectancy = (SELECT MAX(LifeExpectancy) FROM country);
-![image](https://github.com/user-attachments/assets/341c7c61-5bd1-4f9c-b6d2-b91b83f6b56a)
+
+![image](https://github.com/user-attachments/assets/cbdc0a79-cbe6-4661-8925-1fcc8f0c85a5)
+
 
 
 
@@ -276,6 +278,8 @@ LIMIT 1;
 SELECT Name, Capital 
 FROM country 
 WHERE Name = 'Spain';
+
+
 ![image](https://github.com/user-attachments/assets/b9096fda-7170-4479-a01b-3ae7e92927a6)
 
 ## 14. Cities in Europe
